@@ -26,10 +26,11 @@ export default defineConfig({
   ],
 
   /* AQUÍ ESTÁ LA MAGIA: Esto levantará tu App automáticamente en Jenkins */
+  /* En tu playwright.config.ts */
   webServer: {
-    command: 'npm run dev', // El comando que usas para iniciar ToDoList
+    command: 'npm run dev', // Esto ahora sí funcionará
     url: 'http://localhost:5173',
     reuseExistingServer: !process.env.CI,
-    timeout: 120 * 1000, // Damos 2 minutos por si el agente de Jenkins es lento
+    timeout: 120 * 1000,
   },
 });
